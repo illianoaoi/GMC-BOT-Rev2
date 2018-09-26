@@ -1,1 +1,1 @@
-# GMC-BOT-Rev2
+# LINE-BOT-PHP-Starter
