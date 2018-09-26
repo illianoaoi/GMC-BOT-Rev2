@@ -7,7 +7,15 @@
 
 	//$access_token = '3qs5Pox82P6YsmMlmgezB0oh6RuWCT1ChvrGuTRQDgCvWdbmrslqzQuqy4r9oWwrUAT387UBmO/rGlWvHDYW4iKNr9l1tO7g1T3ei7y0w+Zj/z7rxUQFzG0slmDsnW35XwlPMPChWMNmvT6RsLfzcAdB04t89/1O/w1cDnyilFU=';
 	
-	
+	$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('hello');
+	$response = $bot->replyMessage('<reply token>', $textMessageBuilder);
+	if ($response->isSucceeded()) {
+		echo 'Succeeded!';
+		return;
+	}
+
+	// Failed
+	echo $response->getHTTPStatus() . ' ' . $response->getRawBody();
 	
 	/*$ch = curl_init($url);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
